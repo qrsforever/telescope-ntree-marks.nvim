@@ -31,10 +31,10 @@ M.make_finder = function(opts)
         results = Marks.get_marks(),
         entry_maker = function(entry)
             return {
-                node = entry,
-                ordinal = entry.name,
-                filename = entry.name,
-                path = entry.absolute_path,
+                ordinal = entry.name,        -- used by telescope
+                filename = entry.name,       -- used by telescope
+                path = entry.absolute_path,  -- used by telescope
+                absolute_path = entry.absolute_path, -- used by nvim-tree
                 display = make_display,
             }
         end,
